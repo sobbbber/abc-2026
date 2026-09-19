@@ -1,0 +1,91 @@
+#Определение типа сортировки
+def sort():
+    while True:
+        try:
+            u = int(input("Введи интересующий тип сортировки: \n1. По возрасту\n2. По первой букве\n3. По группе\n"))
+            if u > 0 and u <= 3:
+                break
+            else:
+                print("Ошибка, значение только целое от 1 до 3!!!!")
+        except ValueError:
+            print("Ошибка, значение только типа int!!!!")
+    return u
+
+#Сортировка возрасту
+def first():
+    while True:
+        print("Введите критерии поиска: ")
+        try:
+            o = int(input())
+            if o < 0:
+                print("Ошибка. Значение должно быть положительным!!!!")
+                continue
+            else:
+                break
+        except ValueError:
+            print("Ошибка, значение только типа int!!!!")
+    bol = []
+    for x in range(len(users)):
+        if users[x]["age"] > o:
+            user = users[x]
+            print(f"Пользоватеель: {user['login']}"f". Возраст: {user['age']}"f". Группа: {user['group']}")
+
+#Сортировка по первоой букве
+def second():
+    while True:
+        print("Введите критерии поиска: ")
+        try:
+            bykva = input().upper()
+            if len(bykva) == 1 and bykva.isalpha():
+                break
+            else:
+                print("Ошибка. Ввод не более 1 буквы!!!!")
+                continue
+
+        except ValueError:
+            print("Ошибка, значение только типа str!!!!")
+    slovo = []
+    users_ = []
+    for p in range(len(users)):
+        users_.append(users[p]["login"][0])
+    for a in range(len(users_)):
+        if bykva == users_[a]:
+            user = users[a]
+            print(f"Пользоватеель: {user['login']}"f". Возраст: {user['age']}"f". Группа: {user['group']}")
+
+#Сортировка по группе
+def third():
+    print("Сортировка по группам:\n1. guest\n2. master\n3. admin")
+    while True:
+        try:
+            x = int(input("Выбери интересующую группу: "))
+            if x < 1 or x >3:
+                print("Ошибка. Значение должно быть положительным от 1 до 3!!!!")
+                continue
+            else:
+                break
+        except ValueError:
+            print("Ошибка, значение только типа int!!!!")
+    if x == 1:
+        d = "guest"
+    elif x == 2:
+        d = "master"
+    else:
+        d = "admin"
+    for v in range(len(users)):
+        if d == users[v]["group"]:
+            user = users[v]
+            print(f"Пользоватеель: {user['login']}"f". Возраст: {user['age']}"f". Группа: {user['group']}")
+
+users = [{'login': 'Piter', 'age': 23, 'group': "admin"},
+         {'login': 'Ivan',  'age': 10, 'group': "guest"},
+         {'login': 'Dasha', 'age': 30, 'group': "master"},
+         {'login': 'Fedor', 'age': 13, 'group': "guest"}]
+result_sort = sort()
+print("Вы выбрали тип сортировки", result_sort)
+if result_sort == 1:
+    first()
+elif result_sort == 2:
+    second()
+else:
+    third()
