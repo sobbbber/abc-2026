@@ -1,0 +1,27 @@
+#Капитанов А. А.
+#ДЗ№2
+#task5
+"""
+def first(a, b):
+    return a+b, a-b, a*b, a/b, a//b, a%b, a**b
+d = int(input())
+f = int(input())
+print(first(d, f))
+"""
+#task6
+"""
+def second(a):
+    print("Площадь равна: ", a**2)
+    return second
+a = int(input())
+second(a)
+"""
+#task7
+
+def third(a, b, c):
+    print("Длины отрезков: AC =", c-a, "BC = ", c-b, "И их сумма: ", ((c-a)+(c-b)))
+    return third
+q = int(input())
+w = int(input())
+e = int(input())
+third(q, w, e)
