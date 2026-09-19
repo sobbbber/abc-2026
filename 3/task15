@@ -1,0 +1,29 @@
+# Защита по вводу определенного кол-ва значений
+def koll():
+     while True:
+        try:
+            kol = int(input("Введи требуемое количество элементов в массиве (max = 15): "))
+            if kol == int(kol) and kol != 0 and kol <= 15:
+                return kol
+            print("Ошибка. Введи целое число >0 и не >15!!! ")
+        except ValueError:
+            print("Ошибка. Нужно ввести целое число.")
+
+#Защита от строк с пробелами
+def prov():
+    for i in range(kol):
+        while True:
+            try:
+                mass_ = int(input(str(i + 1) + ' число: '))
+                mass.append(mass_)
+                break
+            except ValueError:
+                print("Ошибка. Нужно ввести целое число.")
+                continue
+    return mass
+kol = koll()
+mass = []
+prov()
+for i in range(len(mass)):
+  mass[i] = mass[i] + 1
+print(mass)
