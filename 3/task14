@@ -1,0 +1,47 @@
+# Защита по вводу определенного кол-ва значений
+def koll():
+     while True:
+        try:
+            kol = int(input("Введи требуемое количество элементов в массиве (max = 15): "))
+            if kol == int(kol) and kol != 0 and kol <= 15:
+                return kol
+            print("Ошибка. Введи целое число >0 и не >15!!! ")
+        except ValueError:
+            print("Ошибка. Нужно ввести целое число.")
+
+#Защита от строк с пробелами
+def prov():
+    for i in range(kol):
+        while True:
+            try:
+                mass_ = int(input(str(i + 1) + ' число: '))
+                mass.append(mass_)
+                break
+            except ValueError:
+                print("Ошибка. Нужно ввести целое число.")
+                continue
+    return mass
+
+#Перебор массива со значенияи и посик повторений с последующим подсчетом наименьшего расстояния
+def srav():
+    v = []
+    i = []
+    for x in range(len(mass)):
+        if mass[x] not in v:
+            v.append(mass[x])
+        else:
+            continue
+        for y in range(x + 1, len(mass)):
+            if mass[x] == mass[y]:
+                i.append(y)
+            else:
+                continue
+            if len(i) == 0:
+                continue
+            print("Число", mass[x], ": под индексами: ", x, "и", min(i),"наименьшее расстояние: ", min(i) - x)
+        i = []
+mass = []
+kol = koll()
+prov()
+print(mass)
+srav()
