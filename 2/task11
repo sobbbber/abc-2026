@@ -1,0 +1,18 @@
+#task11
+
+def seventh(a):
+    if a >= 9 and a <= 11:
+        print("Осень")
+    elif (a > 11 and a <= 12) or 0 < a <= 2:
+        print("Зима")
+    elif a >= 3 and a <= 5:
+        print("Весна")
+    elif a >= 6 and a <= 8:
+        print("Лето")
+    else:
+        print("Месяца с таким номером не существует")
+a = int(input("Введите номер месяц: "))
+if a > 12 and a <= 0:
+    print("Месяца с таким номером не существует")
+else:
+    seventh(a)
