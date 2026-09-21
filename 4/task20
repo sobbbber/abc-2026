@@ -1,0 +1,13 @@
+inverted_sort = [ "Beautiful is better than ugly.",
+"Explicit is better than implicit.",
+"Simple is better than complex.",
+"Complex is better than complicated."]
+with open("inverted_sort.txt", "w", encoding = "utf-8") as file:
+    for a, b in enumerate(inverted_sort):
+        file.write(f"{b}\n")
+print("Создание inverted_sort.txt выполнено!")
+with open("inverted_sort.txt", "r", encoding = "utf-8") as file:
+    lines = file.readlines()
+with open("inverted_sort.txt", "a", encoding = "utf-8") as file:
+    for c in range(-4,0):
+        file.write(lines[c])
