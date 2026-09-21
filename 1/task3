@@ -1,0 +1,5 @@
+#task3
+age = 36.6
+temp = 25
+age, temp = temp, age
+print(age, temp)
