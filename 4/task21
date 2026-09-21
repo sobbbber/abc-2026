@@ -1,0 +1,52 @@
+config_values = {
+    'app_name': 'NextGen',
+    'version': '1.0.0',
+    'debug':  True,
+    'db_host': 'localhost',
+    'db_port': 5432,
+    'db_name': 'my_database',
+    'db_user': 'admin',
+    'db_password': 'secret123',
+    'api_key': 'ak_123456789',
+    'api_secret': 'sk_987654321',
+    'base_url': 'https://api.example.com',
+    'log_file': '/var/log/app.log',
+    'data_dir': '/opt/app/data',
+    'temp_dir': '/tmp/app',
+    'max_workers': 10,
+    'timeout': 30,
+    'retry_attempts': 3
+}
+
+print("Создание config_default.txt выполнено!")
+with open("config_default.txt", "r", encoding = "utf-8") as file:
+    lines = file.readlines()
+
+"""for c in range(len(lines)):
+    lines[c] = lines[c].replace(" ", "")
+    lines[c] = lines[c].replace("=", "")
+    lines[c] = lines[c].replace("\n", "")
+    lines[c] = lines[c].replace("?", "")"""
+   # print(lines[c])
+for line in lines:
+    flag = False
+    for line_ in config_values:
+        print(line.split("=")[0].strip())
+        print(config_values)
+        if line.split("=")[0].strip() in config_values:
+            with open("config.txt", "a", encoding = "utf-8") as file:
+                print(str(list(dict.values(config_values))))
+                #lines[c] = lines[c].replace("?", "str(list(dict.values(config_values))[b])")
+                #file.write(str(lines[a]))
+                file.write(f"{line.split("=")[0].strip()}={config_values[line.split("=")[0].strip()]}\n")
+                flag = True
+                break
+        else:
+            continue
+    if flag == False:
+        with open("config.txt", "a", encoding="utf-8") as file:
+            file.write(line)
+
+"""with open("inverted_sort.txt", "a", encoding = "utf-8") as file:
+    for c in range(-4,0):
+        file.write(lines[c])"""
