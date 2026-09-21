@@ -1,0 +1,7 @@
+algoritm = [ "C4.5" , "k - means" , "Метод опорных векторов" ,
+             "Apriori", "EM", "PageRank" , "AdaBoost", "kNN" ,
+             "Наивный байесовский классификатор", "CART" ]
+with open("algoritm.csv", "w", encoding = "utf-8") as file:
+    for a, b in enumerate(algoritm, start = 1):
+        file.write(f"{a};{b}\n")
+print("Создание algoritm.csv выполнено!")
