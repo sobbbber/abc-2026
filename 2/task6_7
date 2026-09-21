@@ -1,0 +1,18 @@
+#task6
+"""
+def second(a):
+    print("Площадь равна: ", a**2)
+    return second
+a = int(input())
+second(a)
+"""
+#task7
+"""
+def third(a, b, c):
+    print("Длины отрезков: AC =", c-a, "BC =", c-b, "Их сумма: ", ((c-a)+(c-b)))
+    return third
+q = int(input())
+w = int(input())
+e = int(input())
+third(q, w, e)
+"""
