@@ -1,0 +1,13 @@
+#task9
+
+def fifth(a, b):
+    d = (-b/a)
+    print("Результат решения уравнения: х = ", d)
+    return
+a = float(input("Решение уравнения Ах+В=0. Задайте А: "))
+b = float(input("Задайте В: "))
+if a != 0:
+    fifth(a, b)
+else:
+    print("А не может быть равно 0")
+
