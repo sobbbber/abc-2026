@@ -1,0 +1,27 @@
+#task12
+
+def eigth(a, m):
+    if a == 1:
+        mass = m
+        print("В кг: ", mass)
+    elif a == 2:
+        mass = m/1000000
+        print("Из мг в кг: ", mass)
+    elif a == 3:
+        mass = m/1000
+        print("Из грамм в кг: ", mass)
+    elif a == 4:
+        mass = m * 1000
+        print("Из тонн в кг: ", mass)
+    elif a == 5:
+        mass = m * 100
+        print("Из центнеров в кг: ", mass)
+    else:
+        print("Отрицательное число и буквы не принимаются: ")
+a = int(input("Введите необходимую единицу измерения массы: "))
+m = float(input("Введите массу: "))
+if m < 0:
+    print("")
+else:
+    print("Результат:")
+    eigth(a, m)
