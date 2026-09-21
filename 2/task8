@@ -1,0 +1,14 @@
+#task8
+
+def forth(a):
+    a = str(a)
+    if a[0] == a[3] and a[1] == a[2]:
+        print("Удовлетворяет условие")
+    else:
+        print("Не удовлетворяет условие")
+    return
+a = input("Введите значение из 4 символов:")
+if len(a) == 4:
+    forth(a)
+else:
+    print("Не верная длина значения")
