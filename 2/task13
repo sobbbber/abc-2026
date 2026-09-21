@@ -1,0 +1,21 @@
+#task13
+
+def ninth(year):
+
+    colors = ["зеленый", "зеленый", "красный", "красный",
+              "желтый", "желтый", "белый", "белый", "черный", "черный"]
+
+    animals = ["крысы", "коровы", "тигра", "зайца", "дракона",
+               "змеи", "лошади", "овцы", "обезьяны", "курицы",
+               "собаки", "свиньи"]
+
+    offset = (year - 4) % 60
+    color_index = offset % 10
+    color = colors[color_index]
+    print(color)
+    animal_index = offset % 12
+    animal = animals[animal_index]
+    print(animal)
+    return
+year = int(input("Введите год:"))
+ninth(year)
