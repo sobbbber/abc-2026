@@ -1,0 +1,11 @@
+#task4
+
+x = int(input("Введите x: "))
+y = int(input("Введите y: "))
+z = int(input("Введите z: "))
+maximum = x
+if y > maximum:
+    maximum = y
+if z > maximum:
+    maximum = z
+print("Наибольшее число:", maximum)
