@@ -1,0 +1,20 @@
+#task2
+
+#1
+age = '23'
+foo = "23abc"
+print(int(age), str(foo))
+#2
+age = '23'
+flag = 1
+print(bool(age), bool(flag))
+#3
+str_one = "Привет"
+str_two = ""
+x = 1
+y = 0
+z = False
+print(bool(str_one), bool(str_two))
+print(bool(x), bool(y))
+print(str(z))
+
