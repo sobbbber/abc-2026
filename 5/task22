@@ -1,0 +1,22 @@
+from flask import Flask
+
+web = Flask(__name__)
+
+def index():
+    return "Главная страница"
+web.route("/")(index)
+
+def about():
+    return "О компании"
+web.route("/about")(about)
+
+def contact():
+    return "Контакты"
+web.route("/contact")(contact)
+
+def post():
+    return "Список постов"
+web.route("/post")(post)
+
+if __name__ == "__main__":
+    web.run(host="0.0.0.0", port=5000)
