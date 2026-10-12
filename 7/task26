@@ -1,0 +1,9 @@
+#task26
+def load_matrix(filename):
+    with open(filename, 'r') as f:
+        matrix = [[int(x) for x in line.split()]  for line in f]
+    if not matrix:
+        return False
+    return matrix if len({len(row) for row in matrix})==1 else False
+
+print(load_matrix("matrix.txt"))ine)
