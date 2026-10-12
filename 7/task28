@@ -1,0 +1,5 @@
+import string
+abc = " " + string.ascii_lowercase
+input = input().split()
+output = ''.join([abc[int(x)] if x.isnumeric() else x for x in input])
+print(output)
