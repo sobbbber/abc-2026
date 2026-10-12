@@ -1,0 +1,16 @@
+import string
+secret = "grznuamn zngz cge sge tuz hk uhbouay gz loxyz atrkyy eua'xk jazin."
+abc = string.ascii_lowercase
+
+for shift_value in range(len(abc)):
+    result_text = ""
+    for char in secret:
+        if char.lower() in abc:
+            char_ind = abc.find(char.lower())
+            new_ind = (char_ind - shift_value) % len(abc)
+            new_char = abc[new_ind]
+            result_text += new_char
+        else:
+            result_text += char
+            
+    print(f"Сдвиг {shift_value}: {result_text}")
