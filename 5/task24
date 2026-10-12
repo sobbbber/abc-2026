@@ -1,0 +1,19 @@
+abc = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+
+with open("message.txt", "r") as file:
+    encrypted_text = []
+    text = file.readlines()
+    for line_num in range(len(text)):
+        new_line = ""
+        for char in text[line_num]:
+            if char.lower() in abc:
+                char_ind = abc.find(char.lower())
+                if char.isupper():
+                    new_line += abc[char_ind-(line_num+1)].upper()
+                else:
+                    new_line += abc[char_ind-(line_num+1)]
+                continue
+            new_line += char
+        encrypted_text.append(new_line)
+    for encrypted_line in encrypted_text:
+        print(encrypted_line)
