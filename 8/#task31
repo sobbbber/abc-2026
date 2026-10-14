@@ -1,0 +1,27 @@
+class Temperature:
+    def __init__(self, celsius: float = 0.0):
+        self._celsius = float(celsius)
+
+    @property
+    def celsius(self):
+        return self._celsius
+
+    @celsius.setter
+    def celsius(self, value: float):
+        self._celsius = float(value)
+
+    @property
+    def fahrenheit(self) -> float:
+        return (self._celsius * 9 / 5) + 32
+
+    @fahrenheit.setter
+    def fahrenheit(self, value: float):
+        self._celsius = (float(value) - 32) * 5 / 9
+
+    @property
+    def kelvin(self):
+        return self._celsius + 273.15
+
+    @kelvin.setter
+    def kelvin(self, value: float):
+        self._celsius = float(value) - 273.15
