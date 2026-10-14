@@ -1,0 +1,40 @@
+class Product:
+    def __init__(self, name:str, price:int):
+        self.name = name
+        self.price = price
+    @property
+    def name(self):
+        return self._name
+    @name.setter
+    def name(self, value:str):
+        self._name = value
+    @property
+    def price(self):
+        return self._price
+    @price.setter
+    def price(self, value:int):
+        if value >= 0:
+            self._price = int(value)
+        else:
+            self._price = 0
+
+class Order:
+    def __init__(self):
+        self._products = []
+    @property
+    def total_price(self):
+        self._total_price = 0
+        for product in self._products:
+            self._total_price += product.price
+        return self._total_price
+    def add_product(self, product:Product):
+        self._products.append(product)
+    def remove_product(self, product:Product):
+        self._products.remove(product)
+
+a = Product("Book", 10)
+b = Product("Pen", 2)
+order = Order()
+order.add_product(a)
+order.add_product(b)
+print(f"Cтоимость:{order.total_price}")  # 12
